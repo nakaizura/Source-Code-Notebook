@@ -320,8 +320,8 @@ class FM(BaseEstimator, TransformerMixin):
         y_true = np.reshape(data['Y'], (num_example,))
         #计算预测和真实的rmse或者logloss。
         if self.loss_type == 'square_loss':    
-            predictions_bounded = np.maximum(y_pred, np.ones(num_example) * min(y_true))  # bound the lower values
-            predictions_bounded = np.minimum(predictions_bounded, np.ones(num_example) * max(y_true))  # bound the higher values
+            predictions_bounded = np.maximum(y_pred, np.ones(num_example) * min(y_true))  #y_pred与y_true最小值逐位比较取其大者（小于则为0），下值边界
+            predictions_bounded = np.minimum(predictions_bounded, np.ones(num_example) * max(y_true)) #predictions_bounded与y_true最大值逐位比较取其小者（大于则为0），上值边界
             RMSE = math.sqrt(mean_squared_error(y_true, predictions_bounded))
             return RMSE
         elif self.loss_type == 'log_loss':
