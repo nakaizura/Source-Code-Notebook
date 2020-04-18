@@ -4,7 +4,7 @@
 
 blog论文阅读笔记：https://blog.csdn.net/qq_39388410/article/details/85119300
 
-建议阅读顺序：Dataset-->FM-->AFM
+建议阅读顺序：LoadData-->FM-->AFM
 
 # 
 
