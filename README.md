@@ -1,6 +1,6 @@
 # Source-Code-Notebook
 
-关于一些经典Source Code的 中文的 Notebook，尽量做到整体框架梳理和逐行源码注释。
+关于一些经典论文源码Source Code的中文笔记，尽量做到整体框架梳理和逐行源码注释。
 
 不过太早期的代码一般都模块化了，所以主要更一些后期较新的源码笔记。
 
@@ -15,6 +15,9 @@
 | AFM | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/AFM) |
 | NCF | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/NCF) |
 | ONCF | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/ONCF) |
+| DIN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DIN) |
+| DRL-REC | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DRL-REC) |
+| IRGAN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/IRGAN) |
 #
 图神经网络
 | Graph | Notebook |
@@ -23,10 +26,12 @@
 | GAT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GAT) |
 | GraphSAGE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GraphSAGE) |
 | HetGNN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/HetGNN) |
+| Scenegraph | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Scenegraph) |
 #
 自然语言处理
 | NLP | Notebook |
 | ------ | ------ |
+| Sentence2vec | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Sentence2vec) |
 | Transformer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Transformer) |
 | BERT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/BERT) |
 #
