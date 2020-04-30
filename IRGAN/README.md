@@ -4,6 +4,8 @@
 
 建议阅读顺序：utils-->gen_model-->dis_model-->cf_gan-->dis_model_dns-->cf_dns
 
+#
+
 原paper：IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models，SIGIR2017
 
 原code： https://github.com/geek-ai/irgan
