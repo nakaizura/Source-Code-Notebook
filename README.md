@@ -40,6 +40,7 @@
 | CV | Notebook | keywords |
 | ------ | ------ | ------ |
 | DCGAN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DCGAN) | GAN in CV |
+| InfoGAN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/InfoGAN) | Info Control |
 | Capsules | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Capsules) | CNN is Rubbish |
 | SlowFast | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/SlowFast) | Slow+Fast |
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
