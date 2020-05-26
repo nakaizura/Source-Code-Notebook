@@ -23,6 +23,7 @@
 图神经网络
 | Graph | Notebook | keywords |
 | ------ | ------ | ------ |
+| Louvain | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Louvain) | Community Detection |
 | GCN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GCN) | Spectral Convolutional |
 | GAT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GAT) | Spatial+Attention |
 | GraphSAGE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GraphSAGE) | Inductive |
