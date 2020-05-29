@@ -19,6 +19,7 @@
 | DIN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DIN) | Attention+Interest |
 | DRL-REC | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DRL-REC) | RL in Rec |
 | IRGAN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/IRGAN) | GAN in Rec |
+| RippleNet | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/RippleNet) | KG in Rec |
 #
 图神经网络
 | Graph | Notebook | keywords |
