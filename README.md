@@ -20,6 +20,8 @@
 | DRL-REC | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/DRL-REC) | RL in Rec |
 | IRGAN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/IRGAN) | GAN in Rec |
 | RippleNet | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/RippleNet) | KG in Rec |
+| NGCF | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/NGCF) | Graph in Rec |
+| LightGCN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/LightGCN) | Light Vesion NGCF |
 #
 图神经网络
 | Graph | Notebook | keywords |
