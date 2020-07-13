@@ -52,4 +52,5 @@
 跨模态
 | Cross-modal | Notebook | keywords |
 | ------ | ------ | ------ |
+| TALL | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/CTRL) | Cross-modal Video Moment Retrieval |
 | Preparing | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/) | 待更...... |
