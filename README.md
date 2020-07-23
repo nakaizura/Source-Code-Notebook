@@ -6,7 +6,7 @@
 
 * 语言主要是Pytorch和Tensorflow版本的代码，部分Keras。
 
-* 部分代码涉及到配置、数据集和预训练模型，请对应原文章的源码进行操作。
+* 部分代码Run起来需要涉及到配置、数据集和预训练模型，请对应原文章的源码进行操作。
 
 * 有注解错误和思路问题欢迎讨论。
 #
@@ -24,6 +24,8 @@
 | RippleNet | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/RippleNet) | KG in Rec |
 | NGCF | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/NGCF) | Graph in Rec |
 | LightGCN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/LightGCN) | Light Vesion NGCF |
+| SR-GNN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/SR-GNN) | Session-based GNN |
+
 #
 图神经网络
 | Graph | Notebook | keywords |
