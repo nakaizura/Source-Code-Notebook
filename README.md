@@ -9,6 +9,10 @@
 * 部分代码Run起来需要涉及到配置、数据集和预训练模型，请对应原文章的源码进行操作。
 
 * 有注解错误和思路问题欢迎讨论。
+
+
+欢迎访问配套博客解读：https://blog.csdn.net/qq_39388410
+
 #
 推荐系统
 | Recommendation | Notebook | keywords |
