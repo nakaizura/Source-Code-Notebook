@@ -40,6 +40,7 @@
 | GCN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GCN) | Spectral Convolutional |
 | GAT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GAT) | Spatial+Attention |
 | GraphSAGE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GraphSAGE) | Inductive |
+| GAE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GAE) | Graph Autoencoder |
 | HetGNN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/HetGNN) | Heterogeneous |
 | Scenegraph | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Scenegraph) | Relationship Triplet |
 #
@@ -52,6 +53,7 @@
 | C3D | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/C3D) | 3D VGG |
 | SlowFast | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/SlowFast) | Slow+Fast |
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
+| MoCo | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MoCo) | Contrastive Learning |
 #
 自然语言处理
 | NLP | Notebook | keywords |
