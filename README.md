@@ -67,5 +67,6 @@
 | ------ | ------ | ------ |
 | TALL | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/CTRL) | Cross-modal Video Moment Retrieval |
 | ACMR | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/ACMR) | Adversarial Cross-modal Retrieval  |
-| S2VT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/S2VT) | Video Caption  |
+| S2VT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/S2VT) | Video Captioning  |
+| VMT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/VMT) | Video Translation  |
 | Preparing | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/) | 待更...... |
