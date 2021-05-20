@@ -43,6 +43,8 @@
 | GAE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/GAE) | Graph Autoencoder |
 | HetGNN | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/HetGNN) | Heterogeneous |
 | Scenegraph | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Scenegraph) | Relationship Triplet |
+| Graph Transformer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Graph-Transformer) | Graph Transformer |
+
 #
 计算机视觉
 | CV | Notebook | keywords |
