@@ -56,7 +56,7 @@
 | SlowFast | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/SlowFast) | Slow+Fast |
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
 | MoCo | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MoCo) | Contrastive Learning |
-| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | MIL-NCE |
+| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | Contrastive Learning |
 
 #
 自然语言处理
@@ -75,5 +75,5 @@
 | ACMR | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/ACMR) | Adversarial Cross-modal Retrieval  |
 | S2VT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/S2VT) | Cross-modal Video Captioning  |
 | VMT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/VMT) | Cross-modal Video Translation  |
-| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | MIL-NCE |
+| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | Cross-modal Align |
 | Preparing | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/) | 待更...... |
