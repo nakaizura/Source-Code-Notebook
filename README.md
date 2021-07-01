@@ -66,6 +66,7 @@
 | Skip-Thought | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Skip-ThoughtVectors) | Sentence2vec |
 | Transformer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Transformer) | Attention is All |
 | BERT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/BERT) | Pretraning NLP |
+
 #
 跨模态
 | Cross-modal | Notebook | keywords |
@@ -74,4 +75,5 @@
 | ACMR | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/ACMR) | Adversarial Cross-modal Retrieval  |
 | S2VT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/S2VT) | Cross-modal Video Captioning  |
 | VMT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/VMT) | Cross-modal Video Translation  |
+| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | MIL-NCE |
 | Preparing | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/) | 待更...... |
