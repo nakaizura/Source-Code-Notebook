@@ -56,6 +56,8 @@
 | SlowFast | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/SlowFast) | Slow+Fast |
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
 | MoCo | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MoCo) | Contrastive Learning |
+| MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | MIL-NCE |
+
 #
 自然语言处理
 | NLP | Notebook | keywords |
