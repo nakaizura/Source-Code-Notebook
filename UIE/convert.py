@@ -1,6 +1,12 @@
 from asyncio import run_coroutine_threadsafe
 from ntpath import join
 import os
+import json
+import paddle.fluid as fluid
+import numpy as np
+import shutil
+import pickle
+import sys
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 
@@ -38,6 +44,31 @@ class UIE(nn.Module):
         end_prob = self.sigmoid(end_logits)
         return start_prob, end_prob
 
+
+def convert_paddle_framework():
+    model_path = './model_state.pdparams'
+    model_save_path = './uieparams.pickle'
+
+    assert os.path.exists(model_path)
+    #assert os.path.exists(model_save_path)
+
+    def load_state(path):
+        print(path)
+        if os.path.exists(path + '.pdopt'):
+            # XXX another hack to ignore the optimizer state
+            tmp = tempfile.mkdtemp()
+            dst = os.path.join(tmp, os.path.basename(os.path.normpath(path)))
+            shutil.copy(path + '.pdparams', dst + '.pdparams')
+            state = fluid.io.load_program_state(dst)
+            shutil.rmtree(tmp)
+        else:
+            state = fluid.io.load_program_state(path)
+        return state
+
+    # state = load_state(model_path)
+    # for i in state:
+    #     print(i,state[i].shape)
+    #pickle.dump(state, open(model_save_path, 'wb'))
 
 
 def combine_torch_framework():
