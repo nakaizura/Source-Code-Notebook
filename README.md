@@ -66,6 +66,7 @@
 | Skip-Thought | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Skip-ThoughtVectors) | Sentence2vec |
 | Transformer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Transformer) | Attention is All |
 | BERT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/BERT) | Pretraning NLP |
+| UIE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/UIE) | Information Extraction |
 
 #
 跨模态
