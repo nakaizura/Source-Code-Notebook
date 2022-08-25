@@ -6,7 +6,8 @@ import math
 import pkuseg
 
 import numpy as np
-        
+
+# 以下注释大部分是原作者写的，特别详细，但居然才个数位star？
 
 class ChineseSummaryExtractor(object):
     """
