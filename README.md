@@ -68,6 +68,7 @@
 | BERT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/BERT) | Pretraning NLP |
 | extractive_summarization | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/extractive_summarization) | Extractive Summarization |
 | UIE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/UIE) | Information Extraction |
+| OpenPrompt | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/OpenPrompt) | OpenPrompt |
 
 #
 跨模态
