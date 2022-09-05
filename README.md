@@ -57,8 +57,10 @@
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
 | MoCo | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MoCo) | Contrastive Learning |
 | MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | Contrastive Learning |
+| CLIP | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/CLIP) | CLIP |
 | ViT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MLP-Mixer) | Vsion Transformer |
 | MLP-Mixer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MLP-Mixer) | MLP is All |
+
 
 
 #
@@ -73,6 +75,7 @@
 | UIE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/UIE) | Information Extraction |
 | OpenPrompt | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/OpenPrompt) | OpenPrompt |
 
+
 #
 跨模态
 | Cross-modal | Notebook | keywords |
@@ -82,4 +85,5 @@
 | S2VT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/S2VT) | Cross-modal Video Captioning  |
 | VMT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/VMT) | Cross-modal Video Translation  |
 | MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | Cross-modal Align |
+| CLIP | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/CLIP) | Cross-modal Pre-training |
 | Preparing | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/) | 待更...... |
