@@ -57,6 +57,9 @@
 | Non-local | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/Non-local) | Pixel+Attention |
 | MoCo | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MoCo) | Contrastive Learning |
 | MIL-NCE | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MIL-NCE) | Contrastive Learning |
+| ViT | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MLP-Mixer) | Vsion Transformer |
+| MLP-Mixer | [Notebook](https://github.com/nakaizura/Source-Code-Notebook/tree/master/MLP-Mixer) | MLP is All |
+
 
 #
 自然语言处理
