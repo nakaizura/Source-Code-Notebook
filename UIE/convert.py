@@ -18,9 +18,9 @@ import numpy as np
 class UIE(nn.Module):
     def __init__(self, encoding_model):
         super(UIE, self).__init__()
-        self.encoder = encoding_model
+        self.encoder = encoding_model #载入已训练好的大模型
         hidden_size =  768
-        self.linear_start = nn.Linear(hidden_size,1)
+        self.linear_start = nn.Linear(hidden_size,1) #增加2个线性预测head
         self.linear_end = nn.Linear(hidden_size,1)
         self.sigmoid = nn.Sigmoid()
 
@@ -35,8 +35,8 @@ class UIE(nn.Module):
             input_ids=input_ids,
             token_type_ids=token_type_ids,
             position_ids=pos_ids,
-            attention_mask=attention_mask)['last_hidden_state']
-        start_logits = self.linear_start(sequence_output)
+            attention_mask=attention_mask)['last_hidden_state'] #对应大模型的输入规则
+        start_logits = self.linear_start(sequence_output) #通过线性head得到结果
         start_logits = torch.squeeze(start_logits, -1)
         start_prob = self.sigmoid(start_logits)
         end_logits = self.linear_end(sequence_output)
@@ -45,7 +45,7 @@ class UIE(nn.Module):
         return start_prob, end_prob
 
 
-def convert_paddle_framework():
+def convert_paddle_framework(): #转换paddle的参数到torch的参数
     model_path = './model_state.pdparams'
     model_save_path = './uieparams.pickle'
 
@@ -68,18 +68,18 @@ def convert_paddle_framework():
     # state = load_state(model_path)
     # for i in state:
     #     print(i,state[i].shape)
-    #pickle.dump(state, open(model_save_path, 'wb'))
+    #pickle.dump(state, open(model_save_path, 'wb')) #存到本地
 
 
 def combine_torch_framework():
-    #载入ernie并结合uie的框架
+    #载入ernie模型并结合uie的框架
     from transformers import BertTokenizer, BertModel
     tokenizer = BertTokenizer.from_pretrained("nghuyong/ernie-3.0-base-zh")
-    ernie = BertModel.from_pretrained("nghuyong/ernie-3.0-base-zh")
-    model = UIE(ernie)
-    a = model.forward()
+    ernie = BertModel.from_pretrained("nghuyong/ernie-3.0-base-zh") #载入ernie模型
+    model = UIE(ernie) #到增添线性head的模型中
+    a = model.forward() #得到模型的输出
 
-    for name,parameters in model.named_parameters():
+    for name,parameters in model.named_parameters(): #打印模型参数
         print(name,':',parameters.size())
 
     torch.save(model.state_dict(), "uietorch.pth")
@@ -92,20 +92,20 @@ def paddle2torch():
     model_torch = torch.load('uietorch.pth')
 
     # model_paddle_key_list = []
-    # for name in model_paddle.keys():
+    # for name in model_paddle.keys(): #打印paddle的参数
     #     if name == 'StructuredToParameterName@@':continue
     #     model_paddle_key_list.append(name)
 
     # model_torch_key_list = []
-    # for name in model_torch.keys():
+    # for name in model_torch.keys(): #打印torch的参数
     #     if name == 'encoder.embeddings.position_ids':continue
     #     model_torch_key_list.append(name)
 
-    # for name_paddle, name_torch in zip(model_paddle_key_list, model_torch_key_list):
+    # for name_paddle, name_torch in zip(model_paddle_key_list, model_torch_key_list): #两者一起打印出来用于比对参数对齐
     #     print(name_paddle, '  ', name_torch)
-    #     print(model_paddle[name_paddle].shape, "  ", model_torch[name_torch].shape)
+    #     print(model_paddle[name_paddle].shape, "  ", model_torch[name_torch].shape) #保持维度是一致的
 
-
+    # 参数映射表
     map_list={'encoder.embeddings.word_embeddings.weight': 'encoder.embeddings.word_embeddings.weight', 
     'encoder.embeddings.position_embeddings.weight': 'encoder.embeddings.position_embeddings.weight', 
     'encoder.embeddings.token_type_embeddings.weight': 'encoder.embeddings.token_type_embeddings.weight', 
@@ -327,27 +327,103 @@ def paddle2torch():
     torch.save(model_torch, "uie_paddle2torch.pth")
 
 
-def get_eval(Content_input,Prompt):
-    #这里要变成Content="[CLS]"+ "时间" + "[SEP]" + Content + "[SEP]"
-    #Content_input="6月10日加班打车回家25元"
-    #Prompt="时间"
 
-    Content= Prompt + "[SEP]" + Content_input
-    inputs = tokenizer(Content, return_tensors="pt")
+def get_eval(Content_input,Prompt): #输入模型进行测试
+    Content= Prompt + "[SEP]" + Content_input #拼接得到输入
+    inputs = tokenizer(Content, return_tensors="pt") #切词
     inputs['token_type_ids'][:,len(Prompt)+2:]=1
-    pos_ids=torch.tensor([[i for i in range(len(inputs['input_ids'][0]))]])
+    pos_ids=torch.tensor([[i for i in range(len(inputs['input_ids'][j]))] for j in range(len(inputs['input_ids']))])
     inputs['pos_ids']=pos_ids
 
-    output_sp, output_ep = model(**inputs)
-    point_s = np.argmax(output_sp[0].detach().numpy())
-    point_e = np.argmax(output_ep[0].detach().numpy())
-    #print(point_s,point_e)
-    #print(output_sp[0][point_s],output_ep[0][point_e])
-    if output_sp[0][point_s]>0.5 or output_ep[0][point_e]>0.5:
-        tokens = tokenizer.tokenize(Content)
-        outputs = tokens[point_s-1:point_e]
-        return "".join(outputs)
-    return ""
+    output_sp, output_ep = model(**inputs) #输入到模型中得到概率结果
+    #point_s = np.argmax(output_sp[0].detach().numpy())
+    #point_e = np.argmax(output_ep[0].detach().numpy())
+    #if output_sp[0][point_s]>0.5 or output_ep[0][point_e]>0.5:
+    #    tokens = tokenizer.tokenize(Content)
+    #    outputs = tokens[point_s-1:point_e]
+    #    return "".join(outputs)
+    #return ""
+
+    # 修复result_list是多个结果
+    res=[]
+    tokens = tokenizer.tokenize(Content)
+
+    output_sp=output_sp.tolist()
+    output_ep=output_ep.tolist()
+    start_ids_list=get_bool_ids_greater_than(output_sp, 0.4)
+    end_ids_list=get_bool_ids_greater_than(output_ep, 0.4)
+    for start_ids, end_ids in zip(start_ids_list,end_ids_list):
+        span_set = get_span(start_ids, end_ids)
+        for span in span_set:
+            res.append("".join(tokens[span[0]-1:span[1]]))
+    return res
+
+def get_bool_ids_greater_than(probs, limit=0.5, return_prob=False):
+    # 阈值限制
+    probs = np.array(probs)
+    dim_len = len(probs.shape)
+    if dim_len > 1:
+        result = []
+        for p in probs:
+            result.append(get_bool_ids_greater_than(p, limit, return_prob))
+        return result
+    else:
+        result = []
+        for i, p in enumerate(probs):
+            if p > limit:
+                if return_prob:
+                    result.append((i, p))
+                else:
+                    result.append(i)
+        return result
+
+
+def get_span(start_ids, end_ids, with_prob=False):
+    #做start id 和 end id 的配对
+    if with_prob:
+        start_ids = sorted(start_ids, key=lambda x: x[0])
+        end_ids = sorted(end_ids, key=lambda x: x[0])
+    else:
+        start_ids = sorted(start_ids)
+        end_ids = sorted(end_ids)
+
+    start_pointer = 0
+    end_pointer = 0
+    len_start = len(start_ids)
+    len_end = len(end_ids)
+    couple_dict = {}
+    while start_pointer < len_start and end_pointer < len_end:
+        if with_prob:
+            if start_ids[start_pointer][0] == end_ids[end_pointer][0]:
+                couple_dict[end_ids[end_pointer]] = start_ids[start_pointer]
+                start_pointer += 1
+                end_pointer += 1
+                continue
+            if start_ids[start_pointer][0] < end_ids[end_pointer][0]:
+                couple_dict[end_ids[end_pointer]] = start_ids[start_pointer]
+                start_pointer += 1
+                continue
+            if start_ids[start_pointer][0] > end_ids[end_pointer][0]:
+                end_pointer += 1
+                continue
+        else:
+            if start_ids[start_pointer] == end_ids[end_pointer]:
+                couple_dict[end_ids[end_pointer]] = start_ids[start_pointer]
+                start_pointer += 1
+                end_pointer += 1
+                continue
+            if start_ids[start_pointer] < end_ids[end_pointer]:
+                couple_dict[end_ids[end_pointer]] = start_ids[start_pointer]
+                start_pointer += 1
+                continue
+            if start_ids[start_pointer] > end_ids[end_pointer]:
+                end_pointer += 1
+                continue
+    result = [(couple_dict[end], end) for end in couple_dict]
+    result = set(result)
+    return result
+
+
 
 
 # 试用
@@ -364,14 +440,17 @@ print('---------torch-version uie loaded---------')
 sentence="6月10日加班打车回家25元"
 schema={'加班触发词':['时间','花费','目的地']}
 
-res_dic={}
+res_dic_list={}
 for trigger in schema:
+    pre=get_eval(sentence,trigger)[0] #先抽触发词
+    res_dic={}
     for prompt in schema[trigger]:
-        res=get_eval(sentence,prompt)
+        res=get_eval(sentence,'白岩松'+pre+'的'+prompt) #再得到prompt
         if len(res)>0:
             res_dic[prompt]=res
+    res_dic_list[trigger]=res_dic
+print(res_dic_list)
 
-print(res_dic)
 
 
 
